@@ -15,7 +15,7 @@ const LoginForm = () => {
 
     try {
       const response = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://15.206.133.74/user/login",
+        "http://15.206.133.74/user/login",
         {
           method: "POST",
           headers: {
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
       setEmail("");
       setPassword("");
-      
+
       const jsonData = await response.json();
       if (response.ok) {
         localStorage.setItem("token", jsonData.data.token);
